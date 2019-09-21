@@ -4,10 +4,11 @@
 
 
 import discord
+import os
 from bot_commands import sobel_command, compression_command
 
 
-token = ''
+token = os.environ['token']
 client = discord.Client()
 
 
