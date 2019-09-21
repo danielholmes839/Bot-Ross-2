@@ -4,13 +4,11 @@
 
 
 import discord
-from discord.ext import commands
 from bot_commands import sobel_command, compression_command
 
 
-token = 'your token here'
-Client = discord.Client()
-client = commands.Bot(command_prefix='!')
+token = ''
+client = discord.Client()
 
 
 @client.event
@@ -32,4 +30,3 @@ async def on_message(message):
         await client.send_message(message.channel, "Commands: \n!help \n!sobel [url] \n!compression [number 2-16] [url]")
 
 client.run(token)
-

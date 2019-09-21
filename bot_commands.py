@@ -15,7 +15,7 @@ ERROR_MESSAGE = 'Sorry there was an issue with your command'
 
 async def sobel_command(client, message):
     """ Sobel Command """
-    valid, message = check_sobel_arguments(message)
+    valid, error_message = check_sobel_arguments(message)
 
     if valid:
         await client.send_message(message.channel, PROCESSING_MESSAGE)
@@ -29,12 +29,12 @@ async def sobel_command(client, message):
             await client.send_file(message.channel, image)
 
     else:
-        await client.send_message(message.channel, f'{ERROR_MESSAGE}: {message}')
+        await client.send_message(message.channel, f'{ERROR_MESSAGE}: {error_message}')
 
 
 async def compression_command(client, message):
     """ Compression Command """
-    valid, message = check_compression_arguments(message)
+    valid, error_message = check_compression_arguments(message)
 
     if valid:
         await client.send_message(message.channel, PROCESSING_MESSAGE)
@@ -48,4 +48,4 @@ async def compression_command(client, message):
             await client.send_file(message.channel, image)
 
     else:
-        await client.send_message(message.channel, f'{ERROR_MESSAGE}: {message}')
+        await client.send_message(message.channel, f'{ERROR_MESSAGE}: {error_message}')
